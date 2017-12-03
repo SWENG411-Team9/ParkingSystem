@@ -5,6 +5,7 @@
     [issueDate] DATE           NOT NULL,
     [reason]    NCHAR (140)    NOT NULL,
     [lot]       NCHAR (15)     NOT NULL,
-    PRIMARY KEY CLUSTERED ([ticketID] ASC)
+    PRIMARY KEY CLUSTERED ([ticketID] ASC),
+    FOREIGN KEY ([plateNum]) REFERENCES [dbo].[Car] ([plateNum])
 );
 
