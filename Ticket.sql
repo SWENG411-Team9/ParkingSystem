@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Ticket] (
     [ticketID]  NUMERIC (7)    NOT NULL,
-    [badgeNum]  NUMERIC (5)    NOT NULL,
+    [badgeNum]  NUMERIC (10)    NOT NULL,
     [price]     NUMERIC (5, 2) NOT NULL,
     [issueDate] DATE           NOT NULL,
     [reason]    NCHAR (140)    NOT NULL,
