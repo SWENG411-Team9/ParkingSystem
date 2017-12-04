@@ -46,7 +46,7 @@ public class Update extends javax.swing.JPanel {
 
             },
             new String [] {
-                "First Name", "Last Name", "User Name", "Password", "Type"
+
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -179,11 +179,11 @@ public class Update extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         //this is code used to test the add buttion
         //this will later be connected to the add user ui
-        int data1 = Integer.parseInt(jTextField1.getText());
+        String data1 = jTextField1.getText();
         String data2 = jTextField2.getText();
         String data3 = jTextField3.getText();
-        int data4 = Integer.parseInt(jTextField4.getText());
-        int data5 = Integer.parseInt(jTextField5.getText());
+        String data4 = jTextField4.getText();
+        String data5 = jTextField5.getText();
         
         Object[] row = {data1, data2, data3, data4, data5};
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
