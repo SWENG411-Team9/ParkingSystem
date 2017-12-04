@@ -63,11 +63,11 @@ public class Update extends javax.swing.JPanel {
             }
         });
 
-        jTextField1.setText("First Name");
+        jTextField1.setText("employeeID");
 
-        jTextField2.setText("Last Name");
+        jTextField2.setText("username");
 
-        jTextField3.setText("User Name");
+        jTextField3.setText("password");
 
         jToggleButton1.setText("Remove");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -76,9 +76,9 @@ public class Update extends javax.swing.JPanel {
             }
         });
 
-        jTextField4.setText("Password");
+        jTextField4.setText("uType");
 
-        jTextField5.setText("Type");
+        jTextField5.setText("badgeNum");
 
         jTextField6.setText("Row #");
 
@@ -179,11 +179,11 @@ public class Update extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         //this is code used to test the add buttion
         //this will later be connected to the add user ui
-        String data1 = jTextField1.getText();
+        int data1 = Integer.parseInt(jTextField1.getText());
         String data2 = jTextField2.getText();
         String data3 = jTextField3.getText();
-        String data4 = jTextField4.getText();
-        String data5 = jTextField5.getText();
+        int data4 = Integer.parseInt(jTextField4.getText());
+        int data5 = Integer.parseInt(jTextField5.getText());
         
         Object[] row = {data1, data2, data3, data4, data5};
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
