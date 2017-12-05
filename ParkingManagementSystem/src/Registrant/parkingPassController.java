@@ -11,6 +11,6 @@ package Registrant;
  *
  * @author nak5297
  */
-public class parkingPassController {
+public class ParkingPassController {
     
 }
