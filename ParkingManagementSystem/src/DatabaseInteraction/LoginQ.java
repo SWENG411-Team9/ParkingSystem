@@ -5,13 +5,14 @@
  */
 package DatabaseInteraction;
 
+import javax.management.Query;
+
 /**
  *
  * @author Ian
  */
 public class LoginQ extends Query{
 
-    @Override
     public String getString(String[] str) {
         String query = "SELECT uType, badgeNum\n" +
                         "FROM Users\n" +
