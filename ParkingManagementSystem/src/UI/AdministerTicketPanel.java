@@ -258,7 +258,7 @@ public class AdministerTicketPanel extends javax.swing.JPanel {
         /*****************************************************************************************
         !!!!!WRITE CODE TO GENERATE A TICKET ID NUMBER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         ******************************************************************************************/
-        Ticket ticket = new Ticket(, this.badgeNumTextField.getText(), this.regNumTextField.getText(), fine, -1, -1, -1, this.reasonTextArea.getText(), carTemp);
+        Ticket ticket = new Ticket(null, this.badgeNumTextField.getText(), this.regNumTextField.getText(), fine, -1, -1, -1, this.reasonTextArea.getText(), carTemp);
     }//GEN-LAST:event_submitButtonActionPerformed
 
 

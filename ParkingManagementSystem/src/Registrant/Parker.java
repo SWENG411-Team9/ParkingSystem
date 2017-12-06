@@ -13,7 +13,7 @@ public class Parker {
     private int pennStateID;
     private String fullName;
     
-    Parker(int id, String name) {
+    public Parker(int id, String name) {
         this.pennStateID = id;
         this.fullName = name;
     }

@@ -20,7 +20,7 @@ public class Ticket {
     private String reason;
     private Car car;
     
-    Ticket(String id, String badgeNum, String regNum, double price, int month, int day, int year, String reason, Car car) {
+    public Ticket(String id, String badgeNum, String regNum, double price, int month, int day, int year, String reason, Car car) {
         this.id = id;
         this.badgeNum = badgeNum;
         this.price = price;

@@ -24,7 +24,7 @@ public class ParkingPass {
     private SystemDate expirationDate;
     private Car car;
     
-    ParkingPass(int id, String name, int type, int month, int day, int year, Car c, int pNum) {
+    public ParkingPass(int id, String name, int type, int month, int day, int year, Car c, int pNum) {
         this.parker = new Parker(id, name);
         try {
             if (month == -1 || day == -1 || year == -1) {

@@ -56,14 +56,14 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="lNameTextField" max="32767" attributes="0"/>
                               <Component id="fNameTextField" max="32767" attributes="0"/>
-                              <Component id="jPasswordField1" alignment="0" pref="140" max="32767" attributes="0"/>
-                              <Component id="jPasswordField2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="passwordTextField" alignment="0" pref="140" max="32767" attributes="0"/>
+                              <Component id="confirmPasswordTextField" alignment="0" max="32767" attributes="0"/>
                               <Component id="uNameTextField" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                              <Component id="addButton" min="-2" max="-2" attributes="0"/>
+                              <Component id="cancelButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="67" max="32767" attributes="0"/>
                       </Group>
@@ -95,17 +95,17 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="uNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="addButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jPasswordField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="passwordTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jPasswordField2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="confirmPasswordTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cancelButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -126,32 +126,22 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JTextField" name="fNameTextField">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="John"/>
-          </Properties>
           <Events>
             <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="fNameTextFieldFocusGained"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="lNameTextField">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Smith"/>
-          </Properties>
           <Events>
             <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="lNameTextFieldFocusGained"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="uNameTextField">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="abc1234"/>
-          </Properties>
           <Events>
             <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="uNameTextFieldFocusGained"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="officerNumTextField">
           <Properties>
-            <Property name="text" type="java.lang.String" value="000111222333"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
@@ -213,23 +203,17 @@
             <Property name="text" type="java.lang.String" value="Officer Badge Number:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="jPasswordField1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jPasswordField1"/>
-          </Properties>
+        <Component class="javax.swing.JPasswordField" name="passwordTextField">
           <Events>
-            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jPasswordField1FocusGained"/>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="passwordTextFieldFocusGained"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="jPasswordField2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jPasswordField2"/>
-          </Properties>
+        <Component class="javax.swing.JPasswordField" name="confirmPasswordTextField">
           <Events>
-            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jPasswordField2FocusGained"/>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="confirmPasswordTextFieldFocusGained"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="addButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Add"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -245,8 +229,11 @@
               <Dimension value="[75, 25]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addButtonActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="cancelButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cancel"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -264,7 +251,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelButtonActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel3">

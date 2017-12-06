@@ -28,25 +28,24 @@ public class SearchRegistrationPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        passNumTextField = new javax.swing.JTextField();
-        searchButton = new javax.swing.JButton();
+        searchTextField = new javax.swing.JTextField();
+        enterButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        searchDropDown = new javax.swing.JComboBox<String>();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        passNumTextField.setForeground(new java.awt.Color(102, 102, 102));
-        passNumTextField.setText("PP3523678948");
-        passNumTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        passNumTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+        searchTextField.setForeground(new java.awt.Color(102, 102, 102));
+        searchTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        searchTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                passNumTextFieldFocusGained(evt);
+                searchTextFieldFocusGained(evt);
             }
         });
 
-        searchButton.setText("Enter");
+        enterButton.setText("Enter");
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 204));
 
@@ -64,14 +63,14 @@ public class SearchRegistrationPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(69, 69, 69)
                 .addComponent(jLabel1)
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel3.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Search Registration");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Registration Number", "Liscence Plate Number" }));
+        searchDropDown.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Registration Number", "Liscence Plate Number" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -87,13 +86,13 @@ public class SearchRegistrationPanel extends javax.swing.JPanel {
                                 .addGap(57, 57, 57)
                                 .addComponent(jLabel3))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(passNumTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(searchDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(25, 25, 25))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(139, 139, 139)
-                        .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(enterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -104,25 +103,25 @@ public class SearchRegistrationPanel extends javax.swing.JPanel {
                 .addComponent(jLabel3)
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jComboBox1)
-                    .addComponent(passNumTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(searchDropDown)
+                    .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(searchButton)
+                .addComponent(enterButton)
                 .addGap(86, 86, 86))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void passNumTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passNumTextFieldFocusGained
-        passNumTextField.selectAll();
-    }//GEN-LAST:event_passNumTextFieldFocusGained
+    private void searchTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchTextFieldFocusGained
+        searchTextField.selectAll();
+    }//GEN-LAST:event_searchTextFieldFocusGained
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton enterButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField passNumTextField;
-    private javax.swing.JButton searchButton;
+    private javax.swing.JComboBox<String> searchDropDown;
+    private javax.swing.JTextField searchTextField;
     // End of variables declaration//GEN-END:variables
 }

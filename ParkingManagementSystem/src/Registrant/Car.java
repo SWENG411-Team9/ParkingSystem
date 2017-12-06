@@ -15,7 +15,7 @@ public class Car {
     private String model;
     private String color;
     
-    Car(String plate, String make, String model, String color) {
+    public Car(String plate, String make, String model, String color) {
         this.plateNum = plate;
         this.make = make;
         this.model = model;

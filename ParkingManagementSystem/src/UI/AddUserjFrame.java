@@ -10,12 +10,12 @@ package UI;
  *
  * @author Ian
  */
-public class AddUserjFrame extends javax.swing.JFrame {
+public class AddUserJFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form AddUserJFrame
      */
-    public AddUserjFrame() {
+    public AddUserJFrame() {
         initComponents();
     }
 
@@ -39,12 +39,12 @@ public class AddUserjFrame extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        permissionsComboBox = new javax.swing.JComboBox<>();
+        permissionsComboBox = new javax.swing.JComboBox<String>();
         jLabel7 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jPasswordField2 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        passwordTextField = new javax.swing.JPasswordField();
+        confirmPasswordTextField = new javax.swing.JPasswordField();
+        addButton = new javax.swing.JButton();
+        cancelButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,28 +55,24 @@ public class AddUserjFrame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        fNameTextField.setText("John");
         fNameTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 fNameTextFieldFocusGained(evt);
             }
         });
 
-        lNameTextField.setText("Smith");
         lNameTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 lNameTextFieldFocusGained(evt);
             }
         });
 
-        uNameTextField.setText("abc1234");
         uNameTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 uNameTextFieldFocusGained(evt);
             }
         });
 
-        officerNumTextField.setText("000111222333");
         officerNumTextField.setEnabled(false);
         officerNumTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -96,7 +92,7 @@ public class AddUserjFrame extends javax.swing.JFrame {
 
         jLabel6.setText("Permission Level:");
 
-        permissionsComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrator", "Ticketer", "Manager" }));
+        permissionsComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administrator", "Ticketer", "Manager" }));
         permissionsComboBox.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 permissionsComboBoxItemStateChanged(evt);
@@ -105,35 +101,38 @@ public class AddUserjFrame extends javax.swing.JFrame {
 
         jLabel7.setText("Officer Badge Number:");
 
-        jPasswordField1.setText("jPasswordField1");
-        jPasswordField1.addFocusListener(new java.awt.event.FocusAdapter() {
+        passwordTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jPasswordField1FocusGained(evt);
+                passwordTextFieldFocusGained(evt);
             }
         });
 
-        jPasswordField2.setText("jPasswordField2");
-        jPasswordField2.addFocusListener(new java.awt.event.FocusAdapter() {
+        confirmPasswordTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jPasswordField2FocusGained(evt);
+                confirmPasswordTextFieldFocusGained(evt);
             }
         });
 
-        jButton1.setText("Add");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setMaximumSize(new java.awt.Dimension(75, 25));
-        jButton1.setMinimumSize(new java.awt.Dimension(75, 25));
-        jButton1.setPreferredSize(new java.awt.Dimension(75, 25));
-
-        jButton2.setText("Cancel");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.setMaximumSize(new java.awt.Dimension(75, 25));
-        jButton2.setMinimumSize(new java.awt.Dimension(75, 25));
-        jButton2.setName(""); // NOI18N
-        jButton2.setPreferredSize(new java.awt.Dimension(75, 25));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        addButton.setText("Add");
+        addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addButton.setMaximumSize(new java.awt.Dimension(75, 25));
+        addButton.setMinimumSize(new java.awt.Dimension(75, 25));
+        addButton.setPreferredSize(new java.awt.Dimension(75, 25));
+        addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                addButtonActionPerformed(evt);
+            }
+        });
+
+        cancelButton.setText("Cancel");
+        cancelButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cancelButton.setMaximumSize(new java.awt.Dimension(75, 25));
+        cancelButton.setMinimumSize(new java.awt.Dimension(75, 25));
+        cancelButton.setName(""); // NOI18N
+        cancelButton.setPreferredSize(new java.awt.Dimension(75, 25));
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelButtonActionPerformed(evt);
             }
         });
 
@@ -171,13 +170,13 @@ public class AddUserjFrame extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lNameTextField)
                             .addComponent(fNameTextField)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                            .addComponent(jPasswordField2)
+                            .addComponent(passwordTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                            .addComponent(confirmPasswordTextField)
                             .addComponent(uNameTextField))
                         .addGap(40, 40, 40)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 67, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -200,15 +199,15 @@ public class AddUserjFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(uNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(confirmPasswordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -248,21 +247,25 @@ public class AddUserjFrame extends javax.swing.JFrame {
         uNameTextField.selectAll();
     }//GEN-LAST:event_uNameTextFieldFocusGained
 
-    private void jPasswordField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField1FocusGained
-        jPasswordField1.selectAll();
-    }//GEN-LAST:event_jPasswordField1FocusGained
+    private void passwordTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordTextFieldFocusGained
+        passwordTextField.selectAll();
+    }//GEN-LAST:event_passwordTextFieldFocusGained
 
-    private void jPasswordField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField2FocusGained
-        jPasswordField2.selectAll();
-    }//GEN-LAST:event_jPasswordField2FocusGained
+    private void confirmPasswordTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_confirmPasswordTextFieldFocusGained
+        confirmPasswordTextField.selectAll();
+    }//GEN-LAST:event_confirmPasswordTextFieldFocusGained
 
     private void officerNumTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_officerNumTextFieldFocusGained
         officerNumTextField.selectAll();
     }//GEN-LAST:event_officerNumTextFieldFocusGained
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_cancelButtonActionPerformed
+
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+        
+    }//GEN-LAST:event_addButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -281,14 +284,18 @@ public class AddUserjFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddUserjFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddUserJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddUserjFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddUserJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddUserjFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddUserJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddUserjFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddUserJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -297,15 +304,16 @@ public class AddUserjFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddUserjFrame().setVisible(true);
+                new AddUserJFrame().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addButton;
+    private javax.swing.JButton cancelButton;
+    private javax.swing.JPasswordField confirmPasswordTextField;
     private javax.swing.JTextField fNameTextField;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -315,10 +323,9 @@ public class AddUserjFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JTextField lNameTextField;
     protected javax.swing.JTextField officerNumTextField;
+    private javax.swing.JPasswordField passwordTextField;
     private javax.swing.JComboBox<String> permissionsComboBox;
     private javax.swing.JTextField uNameTextField;
     // End of variables declaration//GEN-END:variables
