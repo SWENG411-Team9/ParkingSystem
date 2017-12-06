@@ -13,13 +13,21 @@ public class Employee {
     private String empID = new String();
     private String username = new String();
     private String password = new String ();
+    private String fname = new String();
+    private String lname  =  new String();
+    private String confirmpass = new String();
+    
     private int type;   //categorizes types of employees(1-ticketer, 2-administrator,3-manager)
     
-    public Employee(String id,String usern,String pass,int emptype){    //constructor method
-        empID = id;
+    public Employee(String firstn,String lastn,String confirmpassword,String usern,String pass,int emptype){    //constructor method
+        //empID = id;
         username = usern;
         password = pass;
         type = emptype;
+        fname = firstn;
+        lname = lastn;
+        confirmpass=confirmpassword;
+        
     }
     
     
@@ -27,6 +35,31 @@ public class Employee {
         return empID;
         
     }
+    public String getfname(){
+        return fname;
+    }
+    
+    public void setfname(String f){
+        this.fname=f;
+    }
+    
+    public void setlname(String l){
+        this.lname=l;
+        
+    }
+    public void setconfirmp(String c){
+        this.confirmpass=c;
+    }
+    
+    public String getlname(){
+        return lname;
+    }
+    
+    public String getconfirmp(){
+        return confirmpass;
+    }
+    
+    
     public void setempID(String e){
         this.empID = e;
         
@@ -56,7 +89,7 @@ public class Employee {
     }
     public String toString(){
         String result;
-        result= empID+"\t"+username+"\t"+password+"\t"+type;
+        result= fname+"\t"+lname+"\t"+username+"\t"+password+"\t"+type;
         return result;
     }
 }
