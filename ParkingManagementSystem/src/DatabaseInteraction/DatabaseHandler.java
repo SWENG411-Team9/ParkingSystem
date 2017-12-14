@@ -115,28 +115,64 @@ public class DatabaseHandler {
         return returnVal;
     }
 
-    public ResultSet generateReport(int) {
+    public static ResultSet generateReport(int type, String param) {
+        Statement stmt = null;
+        ResultSet rs = null;
+        String code = "";
         
+        switch(type) {
+            case 0:
+                PSUIDQ pq = new PSUIDQ();
+                String[] pqString = {param};
+                code = pq.getString(pqString);
+                break;
+            case 1:
+                LotQ lq = new LotQ();
+                String[] lqString = {param};
+                code = lq.getString(lqString);
+                break;
+            case 2:
+                OfficerQ oq = new OfficerQ();
+                String[] oqString = {param};
+                code = oq.getString(oqString);
+                break;
+            case 3: 
+                RevenueQ rq = new RevenueQ();
+                String[] str = {};
+                code = rq.getString(str);
+                break;
+            default:
+                System.out.println("Please never let this print");
+        }
         
+        try {
+            stmt= con.createStatement();
+            stmt.executeQuery(code);
+            rs = stmt.getResultSet();
+            
+        } catch (Exception e) {
+            System.out.println("in login");
+            System.out.println(e.getMessage());
+        }
         
-        return new ResultSet();
+        return rs;
     }
 
-    public static void closeTicket(String id) {
+    public static void closeTicket(String[] str) {
         Statement stmt = null;
         ResultSet rs = null;
         
         CloseTicketQ ctq = new CloseTicketQ();
-        String ctqString[] = {id};
-        String code = ctq.getString(ctqString);
+        String code = ctq.getString(str);
+        
         
         try {
+            System.out.println("this may work");
             
             stmt= con.createStatement();
             stmt.executeUpdate(code);
            
-
-            
+            System.out.println("this worked");
         } catch (Exception e) {
             System.out.println("in CloseTicker");
             System.out.println(e.getMessage());

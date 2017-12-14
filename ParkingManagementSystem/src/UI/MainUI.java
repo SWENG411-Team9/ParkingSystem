@@ -77,11 +77,15 @@ public class MainUI extends javax.swing.JFrame {
             }
         });
     }
+    
+    public static void adminTicket() {
+        MainUI.jTabbedPane1.setSelectedIndex(0);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public UI.AdministerTicketPanel administerTicketPanel1;
     public UI.GenerateReportPanel generateReportPanel1;
-    public javax.swing.JTabbedPane jTabbedPane1;
+    public static javax.swing.JTabbedPane jTabbedPane1;
     public UI.SearchRegistrationPanel searchRegistrationPanel1;
     // End of variables declaration//GEN-END:variables
 }

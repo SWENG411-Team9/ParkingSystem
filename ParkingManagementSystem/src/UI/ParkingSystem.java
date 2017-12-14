@@ -75,9 +75,14 @@ public class ParkingSystem {
                     manui.searchRegistrationPanel1.populateTable(platePPSearch);
                     break;
                 case 4:
-                    String psuID = manui.generateReportPanel1.getParam();
+                    String param = manui.generateReportPanel1.getParam();
                     int reptType = manui.generateReportPanel1.getType();
-                    ResultSet rs = DatabaseHandler.psuQuery();
+                    ResultSet rs = DatabaseHandler.generateReport(reptType, param);
+                    manui.generateReportPanel1.populateTable(rs);
+                    break;
+                case 5:
+                    String params[] = {sessionEmployee.getID(), manui.generateReportPanel1.getParam()};
+                    DatabaseHandler.closeTicket(params);
                     break;
                 default:
                     System.out.println("You should never see this");

@@ -284,6 +284,14 @@ public class AdministerTicketPanel extends javax.swing.JPanel {
         return;
     }//GEN-LAST:event_submitButtonActionPerformed
     
+    public static void autoPopulate(String[] str) {
+        AdministerTicketPanel.regNumTextField.setText(str[0]);
+        AdministerTicketPanel.licensePlateTextField.setText(str[1]);
+        AdministerTicketPanel.makeTextField.setText(str[2]);
+        AdministerTicketPanel.modelTextField.setText(str[3]);
+        AdministerTicketPanel.colorTextField.setText(str[4]);
+    }
+    
     public Ticket getTicket() {
         return ticket;
     }
@@ -293,7 +301,7 @@ public class AdministerTicketPanel extends javax.swing.JPanel {
     private javax.swing.JTextField badgeNumTextField;
     private javax.swing.JButton cancelButton;
     private javax.swing.JLabel colorLabel;
-    private javax.swing.JTextField colorTextField;
+    private static javax.swing.JTextField colorTextField;
     private javax.swing.JLabel errorLabel;
     private javax.swing.JLabel fineLabel;
     private javax.swing.JTextField fineTextField;
@@ -302,17 +310,17 @@ public class AdministerTicketPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel licensePlateLabel;
-    private javax.swing.JTextField licensePlateTextField;
+    private static javax.swing.JTextField licensePlateTextField;
     private javax.swing.JLabel lotLabel;
     private javax.swing.JLabel makeLabel;
-    private javax.swing.JTextField makeTextField;
+    private static javax.swing.JTextField makeTextField;
     private javax.swing.JLabel modelLabel;
-    private javax.swing.JTextField modelTextField;
+    private static javax.swing.JTextField modelTextField;
     private javax.swing.JTextField parkingLotTextField;
     private javax.swing.JLabel reasonLabel;
     private javax.swing.JScrollPane reasonScrollPane;
-    private javax.swing.JTextArea reasonTextArea;
-    private javax.swing.JTextField regNumTextField;
+    private static javax.swing.JTextArea reasonTextArea;
+    private static javax.swing.JTextField regNumTextField;
     private javax.swing.JLabel registrationNumberLabel;
     private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables
