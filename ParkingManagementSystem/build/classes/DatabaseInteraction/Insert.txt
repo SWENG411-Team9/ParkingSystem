@@ -1,0 +1,55 @@
+CREATE TABLE Car (    plateNum VARCHAR (7) NOT NULL PRIMARY KEY,
+    make     VARCHAR (15)  NOT NULL,
+    model    VARCHAR (15)  NOT NULL,
+    color   VARCHAR (15)  NOT NULL
+);
+
+
+CREATE TABLE Parker (
+    parkerID NUMERIC (9) NOT NULL PRIMARY KEY,
+    fname    VARCHAR (15)  NOT NULL,
+    lname    VARCHAR (15)  NOT NULL    );
+CREATE TABLE ParkingPass (
+    permitNum      NUMERIC (12) NOT NULL PRIMARY KEY ,
+    permitType    INT          NOT NULL,
+    experationDate VARCHAR (10)	NOT NULL,
+    parkerID       NUMERIC (9)  NOT NULL,
+    carPlateNum    VARCHAR (7)  NOT NULL,
+    
+    FOREIGN KEY (carPlateNum) REFERENCES Car (plateNum),
+    FOREIGN KEY (parkerID) REFERENCES Parker (parkerID)
+);
+CREATE TABLE Ticket (
+    plateNum VARCHAR (7) NOT NULL,
+    ticketID  NUMERIC (7)    NOT NULL,
+    badgeNum  NUMERIC (10)    NOT NULL,
+    price     NUMERIC (5, 2) NOT NULL,
+    issueDate DATE           NOT NULL,
+    reason    VARCHAR (140)    NOT NULL,
+    lot       VARCHAR (15)     NOT NULL,
+    closerID NUMERIC(9)  ,
+    PRIMARY KEY  (ticketID),
+    FOREIGN KEY (plateNum) REFERENCES Car (plateNum)
+);
+CREATE TABLE    Users
+(
+    employeeID NUMERIC(9) NOT NULL PRIMARY KEY, 
+    username VARCHAR(10) NOT NULL, 
+    password VARCHAR(20) NOT NULL, 
+    uType INT NOT NULL, 
+    badgeNum NUMERIC(10)
+);
+INSERT INTO PARK.CAR (PLATENUM, MAKE, MODEL, COLOR) 
+	VALUES ('AAA1111', 'Gmc', 'Yukon', 'Green');
+INSERT INTO PARK.CAR (PLATENUM, MAKE, MODEL, COLOR) 
+	VALUES ('AAA2222', 'Ford', 'Mustang', 'Black');
+INSERT INTO PARK.CAR (PLATENUM, MAKE, MODEL, COLOR) 
+	VALUES ('AAA3333', 'Toyota', 'Corolla', 'Silver');
+INSERT INTO PARK.PARKER (PARKERID, FNAME, LNAME) 
+	VALUES (123456789, 'Alex', 'Jacob');
+INSERT INTO PARK.PARKINGPASS (PERMITNUM, PERMITTYPE, EXPERATIONDATE, PARKERID, CARPLATENUM) 
+	VALUES (123456789111, 1, '2017-12-10', 123456789, 'AAA1111');
+INSERT INTO PARK.TICKET (PLATENUM, TICKETID, BADGENUM, PRICE, ISSUEDATE, REASON, LOT, CLOSERID) 
+	VALUES ('AAA2222', 1234567, 123, 50.00, '2017-12-10', 'Took up 2 spaces', 'a', NULL);
+INSERT INTO PARK.USERS (EMPLOYEEID, USERNAME, PASSWORD, UTYPE, BADGENUM) 
+	VALUES (111111111, 'admin', 'password', 1, 123);
